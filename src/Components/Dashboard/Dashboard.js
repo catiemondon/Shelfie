@@ -11,10 +11,15 @@ class Dashboard extends Component{
 
 
     render(){
+        const inventory= this.props.inventory.map((item, i)=>{
+          return(
+            <Product key={i}  inventoryname={item.name} inventoryprice={item.price} inventoryimg={item.imgurl} />
+          )
+        })
         return(
             <div>
                 <h1>Dashboard</h1>
-                <Product />
+                <Product inventory={inventory} />
             </div>    
 
         )
