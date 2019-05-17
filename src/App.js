@@ -4,6 +4,8 @@ import './App.css';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Form from './Components/Form/Form';
 import Header from './Components/Header/Header';
+import {HashRouter} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 //Will have state (Inventory:[]) Will have methods to get inventory from database
 

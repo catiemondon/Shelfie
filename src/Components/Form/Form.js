@@ -39,6 +39,12 @@ class Form extends Component{
         })
     }
 
+    handleUpdateItem=(name, price, imgurl)=>{
+        axios.put(`/api/inventory/`,  {name:this.state.name, price: this.state.price, imgurl: this.state.imgurl }).then((res)=>{
+            this.props.getinventory()
+        })
+    }
+
 
     render(){
         return(

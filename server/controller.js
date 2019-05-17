@@ -35,5 +35,17 @@ module.exports ={
         .catch(err =>{
             if (err) throw err;
         })
+    },
+
+    updateItem: (req, res)=>{
+        const dbInstance= req.app.get('db')
+        const {id}= req
+        const {name, price, img}= req.body
+
+        dbInstance.update_product({name, price, img})
+        .then(()=> res.sendStatus(200))
+        .catch((err)=>{
+            if (err) throw err;
+        })
     }
 }
