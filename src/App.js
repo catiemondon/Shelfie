@@ -12,6 +12,7 @@ class App extends  Component  {
     super()
     this.state={
       inventory: [],
+      current: []
     }
   }
 
@@ -23,11 +24,19 @@ componentDidMount=()=>{
   })
 }
 
+// componentDidUpdate=()=>{
+//   axios.get('/api/inventory').then((res)=>{
+//     this.setState({
+//       inventory: res.data
+//     })
+//   })
+// }
+
   render(){
   return (
     <div className="App">
       <Header />
-     <Dashboard  inventory={this.state.inventory}/>
+     <Dashboard  inventory={this.state.inventory} getinventory={this.componentDidMount} updateinventory={this.componentDidUpdate}/>
      <Form getinventory={this.componentDidMount}/>
      
      

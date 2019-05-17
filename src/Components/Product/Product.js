@@ -8,16 +8,23 @@ class Product extends Component{
 
     }
 
-
+    handleDelete=()=>{
+        const {deleteProduct}= this.props
+        
+        deleteProduct(this.props.id)
+    }
 
     render(){
         return(
             <div>
-            <h1> {this.props.inventoryname} {this.props.inventoryprice}{this.props.inventoryimg} </h1>
-            
-            <div>
-               {this.props.inventory}
+            <h1> {this.props.inventoryname} </h1>
+            <div>{this.props.inventoryprice}{this.props.inventoryimg} {this.props.inventory}
+            <button>edit</button>
+            <button onClick={this.handleDelete}>delete</button>
             </div>
+               
+           
+          
             </div>
         )
     }

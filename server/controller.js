@@ -24,5 +24,16 @@ module.exports ={
         })
 
 
+    },
+
+    deleteItem: (req, res)=>{
+        const dbInstance= req.app.get('db');
+        const { id }= req.params
+
+        dbInstance.delete_product({id})
+        .then(()=> res.sendStatus(200))
+        .catch(err =>{
+            if (err) throw err;
+        })
     }
 }

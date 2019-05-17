@@ -26,7 +26,7 @@ app.get('/api/inventory', ctrl.getInventory)
 
 app.post('/api/product', ctrl.createItem)
 
-
+app.delete('/api/inventory/:id', ctrl.deleteItem)
 
 app.listen(SERVER_PORT, ()=>{
     console.log(`Slayyy server, S L A Y`)

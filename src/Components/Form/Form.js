@@ -34,7 +34,7 @@ class Form extends Component{
 
     handleAddItem=(e)=>{
         axios.post('/api/product', {name: this.state.name, price: this.state.price, imgurl: this.state.img}).then((res)=>{
-            this.props.componentDidMount()
+            this.props.getinventory()
             this.handleCancelInput()
         })
     }
