@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+//No state, no methods
+
 class Product extends Component{
     constructor(){
         super()

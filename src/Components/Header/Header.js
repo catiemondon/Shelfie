@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+
+//Has no state and no methods
+
 class Header extends Component{
     constructor(){
         super()
