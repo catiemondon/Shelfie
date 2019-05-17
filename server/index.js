@@ -24,6 +24,10 @@ massive(CONNECTION_STRING)
 
 app.get('/api/inventory', ctrl.getInventory)
 
+app.post('/api/product', ctrl.createItem)
+
+
+
 app.listen(SERVER_PORT, ()=>{
     console.log(`Slayyy server, S L A Y`)
 })

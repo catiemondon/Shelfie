@@ -9,5 +9,20 @@ module.exports ={
         .catch(error =>{
             if (error) throw error
         })
+    },
+
+    createItem: (req, res)=>{
+        const dbInstance =req.app.get('db')
+        const {name, price, img} =req.body
+        
+        dbInstance.create_product({name, price, img})
+        .then(() =>{
+            res.sendStatus(200)
+        })
+        .catch(error =>{
+            if(error) throw error;
+        })
+
+
     }
 }

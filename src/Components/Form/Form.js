@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 //Wiil have state (state{name: '', price: 0, imgurl: ''}) 
 //Following methods: handle change (one for each input), post new products to database, clear input boxes
@@ -31,6 +32,12 @@ class Form extends Component{
         })
     }
 
+    handleAddItem=(e)=>{
+        axios.post('/api/product', {name: this.state.name, price: this.state.price, imgurl: this.state.img}).then((res)=>{
+            this.props.componentDidMount()
+            this.handleCancelInput()
+        })
+    }
 
 
     render(){
@@ -43,7 +50,7 @@ class Form extends Component{
                 <input placeholder="price" name="price" onChange={this.handleUpdateInput}></input>
                 <input placeholder="imgurl" name="imgurl" onChange={this.handleUpdateInput}></input>
                 <button onClick={this.handleCancelInput}>Cancel</button>
-                <button >Add to Inventory</button>
+                <button onClick={this.handleAddItem}>Add to Inventory</button>
 
             </form>
             </div>
